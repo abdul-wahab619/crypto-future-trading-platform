@@ -72,20 +72,20 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button className="btn-cyber text-lg px-8 py-6 rounded-full group">
-              Start Trading Now
-              <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <Button className="btn-cyber text-lg px-10 py-7 rounded-full group relative overflow-hidden border-2 border-neon-cyan/50 hover:border-neon-cyan transition-all duration-500 hover:scale-110 hover:shadow-glow-primary">
+              <span className="relative z-10 font-bold text-white">Start Trading Now</span>
+              <ChevronRight className="ml-2 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
             </Button>
             <Button 
               variant="outline" 
-              className="text-lg px-8 py-6 rounded-full border-primary hover:bg-primary/10 hover:border-primary-glow transition-all duration-300"
+              className="text-lg px-10 py-7 rounded-full border-2 border-neon-purple text-neon-purple hover:bg-neon-purple/20 hover:border-neon-purple hover:text-white transition-all duration-500 hover:scale-110 hover:shadow-glow-secondary backdrop-blur-sm bg-black/20"
             >
-              Learn More
+              <span className="font-bold">Learn More</span>
             </Button>
           </motion.div>
 

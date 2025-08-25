@@ -50,7 +50,7 @@ const HowItWorks = () => {
 
         <div className="relative">
           {/* Connection Lines */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-primary transform -translate-y-1/2 z-0" />
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-neon-cyan to-transparent transform -translate-y-1/2 z-0 animate-pulse-glow" />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {steps.map((step, index) => (
@@ -68,16 +68,16 @@ const HowItWorks = () => {
               >
                 <Card className="glass-card border-neon h-full group hover:shadow-glow-primary transition-all duration-500 relative overflow-hidden">
                   {/* Step Number Badge */}
-                  <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg shadow-glow-primary">
-                    {step.step}
+                  <div className="absolute -top-3 -right-3 w-14 h-14 bg-gradient-to-br from-neon-cyan to-neon-purple rounded-full flex items-center justify-center text-white font-black text-xl shadow-glow-primary z-20 border-2 border-background">
+                    <span className="drop-shadow-lg">{step.step}</span>
                   </div>
                   
                   <CardContent className="p-8 text-center relative">
                     {/* Hover Effect */}
                     <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                     
-                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/20 text-primary mb-6 group-hover:shadow-glow-primary transition-all duration-300">
-                      <step.icon className="h-10 w-10" />
+                    <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 text-primary mb-6 group-hover:shadow-glow-primary group-hover:scale-110 transition-all duration-500 border border-primary/20 backdrop-blur-sm">
+                      <step.icon className="h-12 w-12 drop-shadow-lg" />
                     </div>
                     
                     <h3 className="text-2xl font-semibold mb-4 gradient-text">{step.title}</h3>
@@ -85,21 +85,23 @@ const HowItWorks = () => {
                   </CardContent>
                 </Card>
 
-                {/* Animated Arrow for larger screens */}
+                {/* Enhanced Animated Arrow for larger screens */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-20">
+                  <div className="hidden lg:block absolute -right-6 top-1/2 transform -translate-y-1/2 z-20">
                     <motion.div
-                      className="w-8 h-8 border-t-2 border-r-2 border-primary transform rotate-45"
+                      className="relative"
                       animate={{ 
-                        x: [0, 5, 0],
-                        opacity: [0.5, 1, 0.5]
+                        x: [0, 8, 0],
                       }}
                       transition={{ 
                         duration: 2, 
                         repeat: Infinity,
-                        delay: index * 0.5
+                        delay: index * 0.3
                       }}
-                    />
+                    >
+                      <div className="w-10 h-10 border-t-3 border-r-3 border-neon-cyan transform rotate-45 shadow-glow-primary" />
+                      <div className="absolute -inset-1 w-12 h-12 border-t-2 border-r-2 border-neon-purple/50 transform rotate-45 animate-pulse" />
+                    </motion.div>
                   </div>
                 )}
               </motion.div>
