@@ -68,7 +68,7 @@ const HowItWorks = () => {
               >
                 <Card className="glass-card border-neon h-full group hover:shadow-glow-primary transition-all duration-500 relative overflow-hidden">
                   {/* Step Number Badge */}
-                  <div className="absolute -top-3 -right-3 w-14 h-14 bg-gradient-to-br from-neon-cyan to-neon-purple rounded-full flex items-center justify-center text-white font-black text-xl shadow-glow-primary z-20 border-2 border-background">
+                  <div className="absolute -top-2 -right-2 w-14 h-14 bg-gradient-to-br from-neon-cyan to-neon-purple rounded-full flex items-center justify-center text-white font-black text-xl shadow-glow-primary z-20 border-2 border-background">
                     <span className="drop-shadow-lg">{step.step}</span>
                   </div>
                   
